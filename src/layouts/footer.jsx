@@ -235,8 +235,8 @@ export const Footerr = () => {
                   y2="1.22829e-05"
                   gradientUnits="userSpaceOnUse"
                   >
-                  <stop stop-color="#3056D3" stop-opacity="0.08" />
-                  <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+                  <stop stop-color="#B31312" stop-opacity="0.08" />
+                  <stop offset="1" stop-color="#B31312" stop-opacity="0" />
                </linearGradient>
             </defs>
          </svg>

@@ -7,7 +7,7 @@ import { FaShoppingCart } from "react-icons/fa";
 export const Header = () => {
     return (
         <div>
-            <Navbar fluid rounded>
+            <Navbar fluid rounded className='h-[10vh]'>
                 <Navbar.Brand href="https://flowbite-react.com">
                     <span className="self-center whitespace-nowrap text-3xl font-semibold dark:text-white px-6 ">Pro<span className=' text-secondary-color'>Cr.</span></span>
                 </Navbar.Brand>
