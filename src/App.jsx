@@ -3,11 +3,12 @@ import { Route, Routes } from 'react-router-dom';
 import { HomePage } from './pages/Home/home';
 import { About } from './pages/About/about';
 import { Contact } from './pages/Contact/contact';
+import { Header } from './layouts/header';
 function App() {
   return (
 
     <>
-    <Headers/>
+    <Header/>
     
     <Routes>
 
