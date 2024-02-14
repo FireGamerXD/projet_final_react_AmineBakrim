@@ -3,7 +3,7 @@ import './components/contactsass.sass'
 export const Contact = () => {
     return (
         <div>
-                       <div className="banner h-[50vh] thebanner mt-7">
+                                   <div className="banner h-[50vh] thebanner mt-7">
                     <h1 className='text-white text-6xl font-thin w-full h-[100%] flex justify-center items-center'>CONTACT</h1>
             </div>
 
@@ -26,11 +26,6 @@ export const Contact = () => {
                     
                     </div>
 
-
-
-                    <div className="forminputs">
-
-                    </div>
             </div>
         </div>
     );
