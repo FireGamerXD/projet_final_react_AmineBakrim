@@ -4,6 +4,7 @@ import { HomePage } from './pages/Home/home';
 import { About } from './pages/About/about';
 import { Contact } from './pages/Contact/contact';
 import { Header } from './layouts/header';
+import { Footerr } from './layouts/footer';
 function App() {
   return (
 
@@ -17,7 +18,7 @@ function App() {
     <Route path="/contact" element={<Contact/>}/>
 
     </Routes>
-
+    <Footerr/>
     </>
     
   );
