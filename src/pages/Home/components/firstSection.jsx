@@ -396,6 +396,30 @@ class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 
 
 {/* Follow Us Sec */}
 
+<div className="follow xl:h-[50vh] h-[100vh] xl:block flex flex-col justify-evenly">
+
+<p className='text-4xl font-bold text-center pt-4'>@ FIND US ON INSTAGRAM !</p>
+
+<div className="all_last flex xl:flex-row flex-col justify-evenly items-center xl:h-[100%] xl:gap-0 gap-16">
+
+<div className="first xl:w-[20%] border-r-2">
+  <p className='text-2xl font-thin text-center'>Free Delivery WorldWide</p>
+  <p className='text-md font-thin text-center'>For the next 10Days ONLY !!</p>
+</div>
+
+<div className="second xl:w-[20%] border-r-2">
+  <p className='text-2xl font-thin text-center'>Free Delivery WorldWide</p>
+  <p className='text-md font-thin text-center'>For the next 10Days ONLY !!</p>
+</div>
+
+<div className="third xl:w-[20%] ">
+  <p className='text-2xl font-thin text-center'>Free Delivery WorldWide</p>
+  <p className='text-md font-thin text-center'>For the next 10Days ONLY !!</p>
+</div>
+
+</div>
+
+</div>
 
 
 
