@@ -16,6 +16,7 @@ export const FirstSection = () => {
 
   {
     productname: "Whey Protein",
+    productprice: "50$",
     productdesc: "this is the best whey protein that u can buy in the world but it now",
     productimg: wheyprotein,
   },
@@ -23,6 +24,7 @@ export const FirstSection = () => {
 
   {
     productname: "Whey Protein 2",
+    productprice: "50$",
     productdesc: "this is the best whey protein that u can buy in the world but it now",
     productimg: wheyprotein,
   },
@@ -30,6 +32,7 @@ export const FirstSection = () => {
 
   {
     productname: "Whey Protein 3",
+    productprice: "50$",
     productdesc: "this is the best whey protein that u can buy in the world but it now",
     productimg: wheyprotein,
   },
@@ -37,6 +40,7 @@ export const FirstSection = () => {
 
   {
     productname: "Whey Protein 4",
+    productprice: "50$",
     productdesc: "this is the best whey protein that u can buy in the world but it now",
     productimg: wheyprotein,
   },
@@ -44,6 +48,7 @@ export const FirstSection = () => {
 
   {
     productname: "Whey Protein 5",
+    productprice: "50$",
     productdesc: "this is the best whey protein that u can buy in the world but it now",
     productimg: wheyprotein,
   }
@@ -69,7 +74,7 @@ export const FirstSection = () => {
       </Carousel>
     </div>
 
-<div className="allcards w-[100%] mt-24 flex xl:flex-row flex-col justify-evenly">
+<div className="allcards w-[100%] mt-24  flex xl:flex-row flex-col justify-evenly">
     <div className="card1and2 xl:block flex flex-col items-center">
 
 {/* card1 */}
@@ -239,9 +244,6 @@ class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 
 </div>
 
 
-
-
-
 <div class="mb-4 mt-8 dark:border-gray-700 flex justify-center">
     <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
         <li class="me-2" role="presentation">
@@ -259,25 +261,79 @@ class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 
     </ul>
 </div>
 <div id="default-tab-content">
-    <div class="block p-4 rounded-lg bg-gray-50 h-[70vh] dark:bg-gray-800" id="profile" role="profile" aria-labelledby="profile-tab" >
+    <div class="block p-4 rounded-lg bg-white h-[70vh] dark:bg-gray-800" id="profile" role="profile" aria-labelledby="profile-tab" >
         {/* <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
       <h1>ezifnzjrnoinrg</h1> */}
     </div>
-    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="Dashboard" aria-labelledby="dashboard-tab">
+    <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-800" id="dashboard" role="Dashboard" aria-labelledby="dashboard-tab">
         {/* <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
     <h1>hhhhhhhhhhhh</h1> */}
     </div>
-    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="Settings" aria-labelledby="settings-tab">
+    <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-800" id="settings" role="Settings" aria-labelledby="settings-tab">
         {/* <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p> */}
     </div>
-    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="contacts" role="Contacts" aria-labelledby="contacts-tab">
+    <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-800" id="contacts" role="Contacts" aria-labelledby="contacts-tab">
         {/* <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p> */}
     </div>
 </div>
 
 
+</div>
+
+
+
+{/* random Sec */}
+
+
+
+
+
+{
+  products.map((element, index) =>
+  <>
+  <div className="mt-44 bg-gray-100 w-[100%] h-[90vh] flex items-center justify-evenly">
+  <div className=" bg-red-400 w-[35%] h-[75%] flex justify-around">
+          <div className="textall h-[100%] pt-64">
+      <h1 className='text-5xl text-white font-bold flex justify-center items-center p-4'>Be aesthetic</h1>
+      <p className='text-2xl font-thin text-white text-center cursor-pointer hover:underline transition'>View Our Collection</p></div>
+  </div>
+
+    <div className="whitebg  bg-white w-[35%] h-[75%] flex flex-col justify-center items-center">
+        <div className=" w-[55%] h-[60%] mb-2 hover:scale-105 transition">
+        <img src={element.productimg} alt="" className='' />
+        </div>
+        <h1 className='text-2xl'>{element.productname}</h1>
+        <p className='text-xl font-extralight'>{element.productprice}</p>
+        <div className="boxs flex flex-row gap-4 mt-4">
+            <div className="bg-white border w-[5vw] h-[4vw] flex flex-col justify-center items-center">
+              <p className='text-lg font-serif'>112</p>
+              <p className='font-thin'>days</p>
+            </div>
+            <div className="bg-white border w-[5vw] h-[4vw] flex flex-col justify-center items-center">
+              <p className='text-lg font-serif'>10</p>
+              <p className='font-thin'>Hrs</p>
+            </div>
+            <div className="bg-white border w-[5vw] h-[4vw] flex flex-col justify-center items-center">
+              <p className='text-lg font-serif'>55</p>
+              <p className='font-thin'>mins</p>
+            </div>
+            <div className="bg-white border w-[5vw] h-[4vw] flex flex-col justify-center items-center">
+              <p className='text-lg font-serif'>48</p>
+              <p className='font-thin'>secs</p>
+            </div>
+        </div>
+    </div>
+
 
 </div>
+  </>
+  )
+}
+
+
+
+
+
 
         </>
     );

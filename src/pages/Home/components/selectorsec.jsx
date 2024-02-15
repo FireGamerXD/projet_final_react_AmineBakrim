@@ -1,9 +1,11 @@
 import React from 'react';
 
-export const Selectorsec = () => {
+export const Randomsec = () => {
     return (
         <>
             
+            
+
 
         </>
     );
