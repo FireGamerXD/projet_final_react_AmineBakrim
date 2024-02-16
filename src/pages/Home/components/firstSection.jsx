@@ -1,12 +1,20 @@
 
 import './firstSection.sass'
-import { Carousel } from 'flowbite-react';
+import { Carousel, Tabs } from 'flowbite-react';
 import userlogo from '../../../imgs/usericon.png'
 import carousel1 from '../../../imgs/banner1_carousel.png'
 import { useEffect, useState } from 'react';
 import wheyprotein from '../../../imgs/wheyprotein-removebg-preview.png'
 import bandwrist from '../../../imgs/products/wristband.png'
 import { hover } from '@testing-library/user-event/dist/hover';
+import BCAA from '../../../imgs/products/BCAA.png'
+import Creatine from '../../../imgs/products/Creatine.png'
+import MassTech from '../../../imgs/products/MassTech.png'
+import Omega3 from '../../../imgs/products/Omega3.png'
+import PreWorkOut from '../../../imgs/products/PreWorkOut.png'
+import collpic from '../../../imgs/others/mencollection.png'
+
+
 
 
 export const FirstSection = () => {
@@ -264,7 +272,7 @@ class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 
 </div>
 
 
-<div class="mb-4 mt-8 dark:border-gray-700 flex justify-center">
+{/* <div class="mb-4 mt-8 dark:border-gray-700 flex justify-center">
     <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
         <li class="me-2" role="presentation">
             <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
@@ -282,21 +290,96 @@ class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 
 </div>
 <div id="default-tab-content">
     <div class="block p-4 rounded-lg bg-white h-[70vh] dark:bg-gray-800" id="profile" role="profile" aria-labelledby="profile-tab" >
-        {/* <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-      <h1>ezifnzjrnoinrg</h1> */}
+
     </div>
     <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-800" id="dashboard" role="Dashboard" aria-labelledby="dashboard-tab">
-        {/* <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-    <h1>hhhhhhhhhhhh</h1> */}
+
     </div>
     <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-800" id="settings" role="Settings" aria-labelledby="settings-tab">
-        {/* <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p> */}
     </div>
     <div class="hidden p-4 rounded-lg bg-white dark:bg-gray-800" id="contacts" role="Contacts" aria-labelledby="contacts-tab">
-        {/* <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p> */}
     </div>
-</div>
+</div> */}
 
+<div className="flex justify-around items-center gap-5 p-5 mt-16">
+     <div className="flex flex-wrap justify-center  gap-2  w-[90%]  " >
+          <Tabs aria-label="Pills" className="pills  flex justify-center">
+            <Tabs.Item active className="text-center" title="NEW">
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                <div className="flex gap-5 flex-wrap  overflow-hidden">
+                    <div>
+                        <img  src={wheyprotein} width={300} className='hover:scale-105 transition' alt="" />
+                        <div className="p-3">
+                        <p className='text-center text-xl'>Whey Protein</p>
+                        <h3 className='text-center text-lg text-secondary-color'>$80.00</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <img  src={Creatine} width={300} className='hover:scale-105 transition' alt="" />
+                        <div className="p-3">
+                        <p className='text-center text-xl'>Creatine</p>
+                        <h3 className='text-center text-lg text-secondary-color'>$40.00</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <img  src={MassTech} width={260} className='hover:scale-105 transition' alt="" />
+                        <div className="p-3">
+                        <p className='text-center text-xl'>MassTeach</p>
+                        <h3 className='text-center text-lg text-secondary-color'>$50.00</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <img  src={PreWorkOut} width={300} className='hover:scale-105 transition' alt="" />
+                        <div className="p-3">
+                        <p className='text-center text-xl'>Pre Work Out</p>
+                        <h3 className='text-center text-lg text-secondary-color'>$35.00</h3>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+              </p>
+            </Tabs.Item>
+
+            <Tabs.Item active className="text-center" title="OLD">
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                <div className="flex gap-5 flex-wrap  overflow-hidden">
+                <div>
+                        <img  src={BCAA} width={220} className='hover:scale-105 transition' alt="" />
+                        <div className="p-3">
+                        <p className='text-center text-xl'>BCAA</p>
+                        <h3 className='text-center text-lg text-secondary-color'>$25.00</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <img  src={Omega3} width={300} className='hover:scale-105 transition' alt="" />
+                        <div className="p-3">
+                        <p className='text-center text-xl'>OMEGA 3</p>
+                        <h3 className='text-center text-lg text-secondary-color'>$33.00</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <img  src={BCAA} width={220} className='hover:scale-105 transition' alt="" />
+                        <div className="p-3">
+                        <p className='text-center text-xl'>Test1</p>
+                        <h3 className='text-center text-lg text-secondary-color'>$55.00</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <img  src={PreWorkOut} width={300} className='hover:scale-105 transition' alt="" />
+                        <div className="p-3">
+                        <p className='text-center text-xl'>Test2</p>
+                        <h3 className='text-center text-lg text-secondary-color'>$22.00</h3>
+                        </div>
+                    </div>
+                    
+                </div>
+              </p>
+            </Tabs.Item>
+          </Tabs>
+        </div>
+</div>
 
 </div>
 
@@ -304,33 +387,33 @@ class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 
 
 {/* random Sec */}
   <div className="mt-44 mb-44 bg-gray-100 xl:w-[100%] xl:h-[90vh]  h-[140vh] flex xl:flex-row flex-col items-center xl:justify-evenly xl:gap-0 gap-8">
-  <div className=" bg-red-400 xl:mt-0 mt-8  xl:w-[35%] xl:h-[75%] w-[90vw]  flex justify-around">
+  <div className="testtest bg-gray-300 rounded-md xl:mt-0 mt-8  xl:w-[35%] xl:h-[75%] w-[90vw]  flex justify-around">
           <div className="textall h-[100%] pt-64">
       <h1 className='text-5xl text-white font-bold flex justify-center items-center p-4'>Be aesthetic</h1>
-      <p className='text-2xl font-thin text-white text-center cursor-pointer hover:underline transition'>View Our Collection</p></div>
+      <p className='text-2xl font-thin text-white text-center cursor-pointer hover:underline transition'>View Our Collection →</p></div>
   </div>
 
-    <div className="whitebg  bg-white xl:w-[35%] xl:h-[75%] w-[90vw] h-[70%] xl:mb-0 mb-8 flex flex-col justify-center items-center">
+    <div className="whitebg rounded-md  bg-red-500 xl:w-[35%] xl:h-[75%] w-[90vw] h-[70%] xl:mb-0 mb-8 flex flex-col justify-center items-center">
         <div className=" w-[55%] h-[60%] mb-2 hover:scale-105 transition">
         <img src={wheyprotein} alt="" className='' />
         </div>
-        <h1 className='text-2xl'>Whey Protein</h1>
-        <p className='text-xl font-extralight'>50£</p>
+        <h1 className='text-2xl text-white font-semibold'>Whey Protein</h1>
+        <p className='text-xl font-semibold text-white underline hover:scale-110 hover:no-underline transition'>50$</p>
         <div className="boxs flex flex-row gap-4 mt-4">
-            <div className="bg-white border w-[15vw] xl:w-[5vw] xl:h-[4vw] flex flex-col justify-center items-center">
-              <p className='text-lg font-serif'>112</p>
+            <div className="bg-white border rounded-lg w-[15vw] xl:w-[5vw] xl:h-[4vw] flex flex-col justify-center items-center">
+              <p className='text-lg'>112</p>
               <p className='font-thin'>days</p>
             </div>
-            <div className="bg-white border w-[15vw] xl:w-[5vw] xl:h-[4vw] flex flex-col justify-center items-center">
-              <p className='text-lg font-serif'>10</p>
+            <div className="bg-white border rounded-lg w-[15vw] xl:w-[5vw] xl:h-[4vw] flex flex-col justify-center items-center">
+              <p className='text-lg'>10</p>
               <p className='font-thin'>Hrs</p>
             </div>
-            <div className="bg-white border w-[15vw] xl:w-[5vw] xl:h-[4vw] flex flex-col justify-center items-center">
-              <p className='text-lg font-serif'>55</p>
+            <div className="bg-white border rounded-lg w-[15vw] xl:w-[5vw] xl:h-[4vw] flex flex-col justify-center items-center">
+              <p className='text-lg'>55</p>
               <p className='font-thin'>mins</p>
             </div>
-            <div className="bg-white border w-[15vw] xl:w-[5vw] xl:h-[4vw] flex flex-col justify-center items-center">
-              <p className='text-lg font-serif'>48</p>
+            <div className="bg-white border rounded-lg w-[15vw] xl:w-[5vw] xl:h-[4vw] flex flex-col justify-center items-center">
+              <p className='text-lg'>48</p>
               <p className='font-thin'>secs</p>
             </div>
         </div>
@@ -347,48 +430,48 @@ class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 
 <p className='font-semibold text-4xl text-center xl:mb-16'>OUR <span className='text-white bg-secondary-color rounded-lg p-2 xl:hover:bg-red-400 transition'>BLOG</span> </p>
 
 <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 xl:w-[75%] ml-0 xl:ml-44">
-    <div class="rounded overflow-hidden shadow-lg h-[100%] xl:hover:scale-105 xl:transition">
-      <img class="w-[50%] ml-24" src={wheyprotein} alt="Mountain" />
+    <div class="rounded bg-gray-200  overflow-hidden shadow-lg h-[110%] xl:hover:scale-105 xl:transition">
+      <img class="w-[50%] ml-24 mt-4" src={wheyprotein} alt="Mountain" />
       <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2">Whey Protein</div>
-        <p class="text-gray-700 text-base">
+        <div class="font-bold text-xl mb-2 w-[100vw] px-[30%]">Whey Protein</div>
+        <p class="text-gray-700 text-base text-center">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
         </p>
       </div>
-      <div class="px-6 pt-4 pb-2">
+      {/* <div class="px-6 pt-4 pb-2">
         <span class="inline-block bg-red-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Gym</span>
         <span class="inline-block bg-red-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Strong</span>
         <span class="inline-block bg-red-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Protein</span>
-      </div>
+      </div> */}
     </div>
-    <div class="rounded overflow-hidden shadow-lg h-[100%] xl:hover:scale-105 xl:transition">
-      <img class="w-[50%] ml-24 flex justify-center" src={wheyprotein} alt="Mountain" />
+    <div class="rounded bg-gray-200 overflow-hidden shadow-lg h-[110%] xl:hover:scale-105 xl:transition">
+      <img class="w-[50%] mt-4 ml-24 flex justify-center" src={Creatine} alt="Mountain" />
       <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2">Creatine</div>
-        <p class="text-gray-700 text-base">
+        <div class="font-bold text-xl mb-2 px-28">Creatine</div>
+        <p class="text-gray-700 text-base text-center">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
         </p>
       </div>
-      <div class="px-6 pt-4 pb-2">
+      {/* <div class="px-6 pt-4 pb-2">
         <span class="inline-block bg-red-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Creatine</span>
         <span class="inline-block bg-red-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#strenght</span>
         <span class="inline-block bg-red-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#power</span>
-      </div>
+      </div> */}
     </div>
 
-    <div class="rounded overflow-hidden shadow-lg h-[100%] xl:hover:scale-105 xl:transition">
-      <img class="w-[50%] ml-24 flex justify-center" src={wheyprotein} alt="Mountain" />
+    <div class="rounded bg-gray-200 overflow-hidden shadow-lg h-[110%] xl:hover:scale-105 xl:transition">
+      <img class="w-[50%] mt-4 ml-24 flex justify-center" src={PreWorkOut} alt="Mountain" />
       <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2">PreWorkOut</div>
-        <p class="text-gray-700 text-base">
+        <div class="font-bold text-xl mb-2 px-24">PreWorkOut</div>
+        <p class="text-gray-700 text-base text-center">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.
         </p>
       </div>
-      <div class="px-6 pt-4 pb-2">
+      {/* <div class="px-6 pt-4 pb-2">
         <span class="inline-block bg-red-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#PreWorkOut</span>
         <span class="inline-block bg-red-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Energy</span>
         <span class="inline-block bg-red-300 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#time</span>
-      </div>
+      </div> */}
     </div>
   </div>
 </div>

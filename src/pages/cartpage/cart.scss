@@ -1,0 +1,57 @@
+.coup-de-coeur {
+    width: 100%;
+}
+
+
+.favorie-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorie {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 200px;
+    border: 2px black solid;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 77%;
+}
+
+.tshirt {
+    width: 100px;
+    height: 150px;
+}
+
+.table-header {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+
+    button {
+        padding: 5px 10px;
+        background-color: #f2f2f2;
+        border: none;
+        cursor: pointer;
+    }
+
+    h3 {
+        margin: 0 10px;
+    }
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #f2f2f2;
+    border: none;
+    cursor: pointer;
+}
