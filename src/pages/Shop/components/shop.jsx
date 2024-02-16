@@ -370,22 +370,7 @@ const handleSend = (product) => {
 
           <div class="lg:col-span-3">
 
-                {
-                  filteredProducts.map((product) =>
-                  <>
-                                    <div className='w-[20%] py-5' key={product.name}>
-                                    <div className=' overflow-hidden '>
-                                        <img className=' hover:scale-110 relative transition delay-75 w-[100%] ' src={product.image} alt={product.name} />
-                                    </div>
-                                    <h3>{product.name}</h3>
-                                    <p>Price: ${product.price}</p>
-                                    <p>Condition: {product.condition}</p>
-                                    <button onClick={() => handleSend(product)} className='bg-white w-[200px] text-black bg-opacity-80 p-4  text-2xl hover:bg-[#e65540]  absolute translate-x-[15%]  translate-y-[-235%]'>Send</button>
-
-                                </div>
-                  </>
-                  )
-                }
+                  <h1 className='text-6xl text-center'>Comming Soon !!!!</h1>
 
           </div>
         </div>

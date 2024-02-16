@@ -90,7 +90,7 @@ export const FirstSectionComponent = (props) => {
     <div class="mb-6 text-blue-500">
       <a href="#" class="hover:underline text-secondary-color">Forgot Password?</a>
     </div>
-    <button onClick={(e) => { login(e) }} type="submit" class="bg-secondary-color hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full">Login</button>
+    <button onClick={(e) => { login(e) }} type="submit" class="bg-secondary-color hover:bg-red-500 text-white font-semibold rounded-md py-2 px-4 w-full">Login</button>
   </form>
   <div class="mt-6 text-blue-500 text-center">
     <a href="#" class="hover:underline text-secondary-color" onClick={signup}>Sign up Here</a>
