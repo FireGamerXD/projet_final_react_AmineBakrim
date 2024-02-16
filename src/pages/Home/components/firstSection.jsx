@@ -7,88 +7,61 @@ import { useEffect, useState } from 'react';
 import wheyprotein from '../../../imgs/wheyprotein-removebg-preview.png'
 import bandwrist from '../../../imgs/products/wristband.png'
 import { hover } from '@testing-library/user-event/dist/hover';
-import BCAA from '../../../imgs/products/BCAA.png'
-import Creatine from '../../../imgs/products/Creatine.png'
-import MassTech from '../../../imgs/products/MassTech.png'
-import Omega3 from '../../../imgs/products/Omega3.png'
-import PreWorkOut from '../../../imgs/products/PreWorkOut.png'
-import collpic from '../../../imgs/others/mencollection.png'
+import BCAA from '../../../imgs/products/BCAA.png';
+import Creatine from '../../../imgs/products/Creatine.png';
+import MassTech from '../../../imgs/products/MassTech.png';
+import Omega3 from '../../../imgs/products/Omega3.png';
+import PreWorkOut from '../../../imgs/products/PreWorkOut.png';
+import collpic from '../../../imgs/others/mencollection.png';
+import { Avatar, Dropdown, Navbar } from 'flowbite-react';
+import { FaShoppingCart } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 export const FirstSection = () => {
-
-
-
-  const [productname, setProductname] = useState([
-    {
-      productname: "product 1"
-    },
-    {
-      productname: "product 2"
-    },
-    {
-      productname: "product 3"
-    },
-    {
-      productname: "product 4"
-    },
-    {
-      productname: "product 5"
-    },
-  ])
-
-    const [products, setProducts] = useState([
-
-  {
-    productname: "Whey Protein",
-    productprice: "50$",
-    productdesc: "this is the best whey protein that u can buy in the world but it now",
-    productimg: wheyprotein,
-  },
-
-
-  {
-    productname: "Whey Protein 2",
-    productprice: "40$",
-    productdesc: "this is the best whey protein that u can buy in the world but it now",
-    productimg: wheyprotein,
-  },
-
-
-  {
-    productname: "Whey Protein 3",
-    productprice: "60$",
-    productdesc: "this is the best whey protein that u can buy in the world but it now",
-    productimg: wheyprotein,
-  },
-
-
-  {
-    productname: "Whey Protein 4",
-    productprice: "80$",
-    productdesc: "this is the best whey protein that u can buy in the world but it now",
-    productimg: wheyprotein,
-  },
-
-
-  {
-    productname: "Whey Protein 5",
-    productprice: "20$",
-    productdesc: "this is the best whey protein that u can buy in the world but it now",
-    productimg: wheyprotein,
-  }
-
-])
-
-// const test = () =>{
-//   const randomElement = products[Math.floor(Math.random() * products.length)];
-//   const testtt = document.getElementById('tes').innerHTML = randomElement
-// }
+  const navigate = useNavigate()
 
     return (
         <>
+
+<div>
+            <Navbar fluid rounded className='h-[10vh] shadow-md'>
+                <Navbar.Brand href="https://flowbite-react.com">
+                    <span className="self-center whitespace-nowrap text-3xl font-semibold dark:text-white px-6 ">Pro<span className=' text-secondary-color'>Cr.</span></span>
+                </Navbar.Brand>
+                <div className="flex md:order-2">
+                    <Dropdown
+                        arrowIcon={false}
+                        inline
+                        label={
+                            <Avatar alt="User settings" img={userlogo} className='px-2' rounded />
+                        }
+                    >
+                        <Dropdown.Header>
+                            <span className="block text-sm">UserName</span>
+                            <span className="block truncate text-sm font-medium">username@gmail.com</span>
+                        </Dropdown.Header>
+                        <Dropdown.Item onClick={() => navigate('/')}>Log Out</Dropdown.Item>
+                        {/* <Dropdown.Item>Settings</Dropdown.Item>
+                        <Dropdown.Item>Earnings</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item>Sign out</Dropdown.Item> */}
+                    </Dropdown>
+                    <Navbar.Toggle />
+                </div>
+                <Navbar.Collapse className='mt-2'>
+                    <Navbar.Link href="#"  className="text-lg block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary-color md:dark:hover:text-secondary-color dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={() => navigate('/home')}>
+                        Home
+                    </Navbar.Link>
+                    <Navbar.Link href="#" className="text-lg block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary-color md:dark:hover:text-secondary-color dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={() => navigate('/about')}>About</Navbar.Link>
+                    <Navbar.Link href="#" className="text-lg block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary-color md:dark:hover:text-secondary-color dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={() => navigate('/shop')}>Shop</Navbar.Link>
+                    <Navbar.Link href="#" className="text-lg block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary-color md:dark:hover:text-secondary-color dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={() => navigate('/contact')}>Contact</Navbar.Link>
+                </Navbar.Collapse>
+            </Navbar>
+        </div>
+
             <div className="h-56 sm:h-64 xl:h-[80vh] 2xl:h-96">
       <Carousel slide={false}>
         <span>

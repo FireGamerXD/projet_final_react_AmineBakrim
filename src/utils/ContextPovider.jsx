@@ -12,6 +12,7 @@ export const ContextPovider = ({ children }) => {
           productprice: "50$",
           productdesc: "this is the best whey protein that u can buy in the world but it now",
           productimg: wheyprotein,
+          condition: "new",
         },
       
       
@@ -20,6 +21,7 @@ export const ContextPovider = ({ children }) => {
           productprice: "40$",
           productdesc: "this is the best whey protein that u can buy in the world but it now",
           productimg: wheyprotein,
+          condition: "new",
         },
       
       
@@ -28,6 +30,7 @@ export const ContextPovider = ({ children }) => {
           productprice: "60$",
           productdesc: "this is the best whey protein that u can buy in the world but it now",
           productimg: wheyprotein,
+          condition: "old",
         },
       
       
@@ -36,6 +39,7 @@ export const ContextPovider = ({ children }) => {
           productprice: "80$",
           productdesc: "this is the best whey protein that u can buy in the world but it now",
           productimg: wheyprotein,
+          condition: "sale",
         },
       
       
@@ -44,6 +48,7 @@ export const ContextPovider = ({ children }) => {
           productprice: "20$",
           productdesc: "this is the best whey protein that u can buy in the world but it now",
           productimg: wheyprotein,
+          condition: "Supplements",
         }
       
       ])

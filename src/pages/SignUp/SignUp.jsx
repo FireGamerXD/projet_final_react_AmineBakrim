@@ -17,15 +17,13 @@ export const Formtest = (props) => {
         navigate("/about")
     }
     const register = (e) => {
-        //* to prevent refresh  
+ 
         e.preventDefault()
-        //* temp array
+
         let newTab = [...props.profile]
-        
 
-        //* check if ther is a  user  with the same userName
 
-        let userExist = newTab.findIndex(element => element.userName == username)  // if the user already exist  method return the  index of the user / ila l9a lia l user  kayn  kayrje3 l index dyalo  else si non ila la  kayraje3 - 1
+        let userExist = newTab.findIndex(element => element.userName == username)
 
         if (username && useremail && password && confirmPassword && confirmPassword == password) {
             if (userExist == -1) {
@@ -34,7 +32,7 @@ export const Formtest = (props) => {
                     userName: username,
                     userEmail: useremail,
                     password: password,
-                    image: image, // Include the image in the user object
+                    image: image, 
                 }
 
                 newTab.push(user)
@@ -47,7 +45,6 @@ export const Formtest = (props) => {
                 setPassword("")
                 setConfirmPassword("")
                 console.log(newTab);
-                // navigate("/")
                     navigate("/home")
             } else {
                 alert("User already exist ")

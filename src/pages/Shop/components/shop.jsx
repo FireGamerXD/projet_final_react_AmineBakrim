@@ -1,12 +1,55 @@
 import React, { useContext, useState } from 'react';
 import wheyprotein from '../../../imgs/wheyprotein-removebg-preview.png'
 import { MyContext } from '../../../utils/ContextPovider';
+import { Avatar, Dropdown, Navbar } from 'flowbite-react';
+import userlogo from '../../../imgs/usericon.png'
+import { FaShoppingCart } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 
 export const Shop = () => {
-  const [products, setProducts] = useContext(MyContext)
+  const [products, setProducts, users, setUsers] = useContext(MyContext)
+  const [category, setCategory] = useState("");
+  const [priceRange, setPriceRange] = useState("");
+  const [screenArray, setScreenArray] = useState(products) 
+  const navigate = useNavigate()
 
-    const tete = () => {
+  const filterElement = (event) => {
+    console.log(products);
+    let newTab = products.filter(element => element.name.toLowerCase().includes(event.target.value.toLowerCase()));
+    setScreenArray(newTab)
+}
+
+const filteredProducts = screenArray.filter(product => {
+  if (category && product.gender !== category) {
+      return false;
+  }
+
+  if (priceRange) {
+      const [min, max] = priceRange.split('-');
+      const price = product.price;
+      if (price < parseFloat(min) || price > parseFloat(max)) {
+          return false;
+      }
+  }
+  return true;
+
+});
+const handleSend = (product) => {
+  const productdeja = users[0].products.findIndex(p => p.name === product.name);
+  if (productdeja !== -1) {
+      const newUsers = [...users];
+      newUsers[0].products[productdeja].quantity += 1;
+      setUsers(newUsers);
+  } else {
+      const newUsers = [...users];
+      product.quantity = 1; 
+      newUsers[0].products.push(product); 
+      setUsers(newUsers);
+  }
+};
+
+    const closemenufunction = () => {
         let close = document.getElementById('closemenu1')
         close.classList.add('hidden')
     }
@@ -19,50 +62,46 @@ export const Shop = () => {
 
     return (
         <>
+
+<div>
+            <Navbar fluid rounded className='h-[10vh] shadow-md'>
+                <Navbar.Brand href="https://flowbite-react.com">
+                    <span className="self-center whitespace-nowrap text-3xl font-semibold dark:text-white px-6 ">Pro<span className=' text-secondary-color'>Cr.</span></span>
+                </Navbar.Brand>
+                <div className="flex md:order-2">
+                    <Dropdown
+                        arrowIcon={false}
+                        inline
+                        label={
+                            <Avatar alt="User settings" img={userlogo} className='px-2' rounded />
+                        }
+                    >
+                        <Dropdown.Header>
+                            <span className="block text-sm">UserName</span>
+                            <span className="block truncate text-sm font-medium">username@gmail.com</span>
+                        </Dropdown.Header>
+                        <Dropdown.Item onClick={() => navigate('/')}>Log Out</Dropdown.Item>
+                        {/* <Dropdown.Item>Settings</Dropdown.Item>
+                        <Dropdown.Item>Earnings</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item>Sign out</Dropdown.Item> */}
+                    </Dropdown>
+                    <Navbar.Toggle />
+                </div>
+                <Navbar.Collapse className='mt-2'>
+                    <Navbar.Link href="#"  className="text-lg block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary-color md:dark:hover:text-secondary-color dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={() => navigate('/home')}>
+                        Home
+                    </Navbar.Link>
+                    <Navbar.Link href="#" className="text-lg block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary-color md:dark:hover:text-secondary-color dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={() => navigate('/about')}>About</Navbar.Link>
+                    <Navbar.Link href="#" className="text-lg block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary-color md:dark:hover:text-secondary-color dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={() => navigate('/shop')}>Shop</Navbar.Link>
+                    <Navbar.Link href="#" className="text-lg block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary-color md:dark:hover:text-secondary-color dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={() => navigate('/contact')}>Contact</Navbar.Link>
+                </Navbar.Collapse>
+            </Navbar>
+        </div>
             
             <div className="test h-[40vh] w-[100%] mt-16 mb-16">
                 <p className='text-6xl text-white font-semibold flex items-center justify-center h-[100%]'>PRODUCTS</p>
             </div>
-
-            {/* <div className="bigcontainer flex flex-row-reverse border shadow-lg">
-                <div className="container w-[80%] h-[160vh]"></div>
-                <div className="sidebar w-[20%] h-[160vh]">
-                <div className="text1 h-[30vh] flex flex-col justify-evenly font-thin">
-                        <h1 className='text-3xl text-center font-medium'>Categories</h1>
-                        <p className='px-24'>Best Seller</p>
-                        <p className='px-24'>Featured</p>
-                        <p className='px-24'>Promotion</p>
-                        <p className='px-24 '>FREE SHIPPING</p>
-                    </div>
-
-                    <div className="text2 h-[30vh] flex flex-col justify-evenly font-thin">
-                        <h1 className='text-3xl text-center font-medium'>Price</h1>
-                    <div class="dark:bg-black/10 flex flex-row w-[100%] justify-center">
-                            <label class="font-thin w-[100%] flex justify-center">
-                                <input class="p-2 mt-1 dark:border-white-400/20 dark:scale-100 transition-all duration-500 ease-in-out dark:hover:scale-110 dark:checked:scale-100 checked:bg-secondary-color w-[5%] h-[2vh]" type="checkbox"/>
-                               <span className='ml-2'>0-20$</span> 
-                            </label>
-                            </div>
-
-                            <div class="dark:bg-black/10 flex flex-row w-[100%] justify-center">
-                            <label class="font-thin w-[100%] flex justify-center">
-                                <input class="p-2 mt-1 dark:border-white-400/20 dark:scale-100 transition-all duration-500 ease-in-out dark:hover:scale-110 dark:checked:scale-100 checked:bg-secondary-color w-[5%] h-[2vh]" type="checkbox"/>
-                               <span className='ml-2'>20-50$</span> 
-                            </label>
-                            </div>
-
-                            <div class="dark:bg-black/10 flex flex-row w-[100%] justify-center">
-                            <label class="font-thin w-[100%] flex justify-center">
-                                <input class="p-2 mt-1 dark:border-white-400/20 dark:scale-100 transition-all duration-500 ease-in-out dark:hover:scale-110 dark:checked:scale-100 checked:bg-secondary-color w-[5%] h-[2vh]" type="checkbox"/>
-                               <span className='ml-2 mr-4'>+50$</span> 
-                            </label>
-                            </div>
-
-                    </div>
-                    
-                </div>
-                
-            </div> */}
 
 <div class="bg-white">
   <div>
@@ -73,7 +112,7 @@ export const Shop = () => {
         <div class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-12 shadow-xl">
           <div class="flex items-center justify-between px-4">
             <h2 class="text-lg font-medium text-gray-900" >Filters</h2>
-            <button className={isActive ? tete() : ''} onClick={handleClick} type="button" class="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400">
+            <button className={isActive ? closemenufunction() : ''} onClick={handleClick} type="button" class="-mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white p-2 text-gray-400">
               <span class="sr-only">Close menu</span>
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -120,7 +159,7 @@ export const Shop = () => {
                 <div class="space-y-6">
                   <div class="flex items-center">
                     <input id="filter-mobile-category-0" name="category[]" value="new-arrivals" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-secondary-color focus:ring-secondary-color"/>
-                    <label for="filter-mobile-category-0" class="ml-3 min-w-0 flex-1 text-gray-500">New Arrivals</label>
+                    <label for="filter-mobile-category-0" class="ml-3 min-w-0 flex-1 text-gray-500" >New Arrivals</label>
                   </div>
                   <div class="flex items-center">
                     <input id="filter-mobile-category-1" name="category[]" value="sale" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-secondary-color focus:ring-secondary-color"/>
@@ -271,23 +310,23 @@ export const Shop = () => {
                 <div class="space-y-4">
                   <div class="flex items-center">
                     <input id="filter-category-0" name="category[]" value="new-arrivals" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-secondary-color focus:ring-secondary-color"/>
-                    <label for="filter-category-0" class="ml-3 text-sm text-gray-600">New</label>
+                    <label for="filter-category-0" class="ml-3 text-sm text-gray-600" onClick={() => setCategory("New")}>New</label>
                   </div>
                   <div class="flex items-center">
                     <input id="filter-category-1" name="category[]" value="sale" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-secondary-color focus:ring-secondary-color"/>
-                    <label for="filter-category-1" class="ml-3 text-sm text-gray-600">Sale</label>
+                    <label for="filter-category-1" class="ml-3 text-sm text-gray-600" onClick={() => setCategory("Sale")}>Sale</label>
                   </div>
                   <div class="flex items-center">
                     <input id="filter-category-2" name="category[]" value="travel" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-secondary-color focus:ring-secondary-color"/>
-                    <label for="filter-category-2" class="ml-3 text-sm text-gray-600">Old</label>
+                    <label for="filter-category-2" class="ml-3 text-sm text-gray-600" onClick={() => setCategory("Old")}>Old</label>
                   </div>
                   <div class="flex items-center">
                     <input id="filter-category-3" name="category[]" value="organization" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-secondary-color focus:ring-secondary-color"/>
-                    <label for="filter-category-3" class="ml-3 text-sm text-gray-600">Supplements</label>
+                    <label for="filter-category-3" class="ml-3 text-sm text-gray-600" onClick={() => setCategory("")}>Supplements</label>
                   </div>
                   <div class="flex items-center">
                     <input id="filter-category-4" name="category[]" value="accessories" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-secondary-color focus:ring-secondary-color"/>
-                    <label for="filter-category-4" class="ml-3 text-sm text-gray-600">Accessories</label>
+                    <label for="filter-category-4" class="ml-3 text-sm text-gray-600" onClick={() => setCategory("Accesories")}>Accessories</label>
                   </div>
                 </div>
               </div>
@@ -331,7 +370,22 @@ export const Shop = () => {
 
           <div class="lg:col-span-3">
 
-                
+                {
+                  filteredProducts.map((product) =>
+                  <>
+                                    <div className='w-[20%] py-5' key={product.name}>
+                                    <div className=' overflow-hidden '>
+                                        <img className=' hover:scale-110 relative transition delay-75 w-[100%] ' src={product.image} alt={product.name} />
+                                    </div>
+                                    <h3>{product.name}</h3>
+                                    <p>Price: ${product.price}</p>
+                                    <p>Condition: {product.condition}</p>
+                                    <button onClick={() => handleSend(product)} className='bg-white w-[200px] text-black bg-opacity-80 p-4  text-2xl hover:bg-[#e65540]  absolute translate-x-[15%]  translate-y-[-235%]'>Send</button>
+
+                                </div>
+                  </>
+                  )
+                }
 
           </div>
         </div>

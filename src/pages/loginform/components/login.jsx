@@ -68,8 +68,8 @@ export const FirstSectionComponent = (props) => {
         <div className="mt-10">
             <p className='text-5xl font-semibold text-center'>ProCr <span className='text-white bg-secondary-color p-1 rounded-lg'>LOGIN</span></p>
         </div>
-            <div class="bg-gray-100 flex justify-center items-center h-[screen] mt-16 mb-16">
-<div class="w-1/2 h-screen hidden lg:block bg-red-500 py-10">
+            <div class="bg-gray-100 flex justify-center items-center h-[80vh] mt-16 mb-16">
+<div class="w-1/2 h-[80vh] hidden lg:block bg-red-500 py-10">
 <img src={logo} alt=""  className='px-12'/>
 </div>
 <div class="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">

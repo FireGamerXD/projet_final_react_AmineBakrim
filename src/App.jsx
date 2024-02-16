@@ -10,7 +10,7 @@ import { ContextPovider } from './utils/ContextPovider';
 import { Productpage } from './pages/product/productpage';
 import { FirstSectionComponent } from './pages/loginform/components/login';
 import { Formm } from './pages/loginform/form';
-import { Formtest } from './pages/formtest/form';
+import { Formtest } from './pages/SignUp/SignUp';
 import { Profile } from './pages/Profile/profile';
 import { useState } from 'react';
 import Cart from './pages/cartpage/cart';
@@ -18,10 +18,9 @@ function App() {
   
   const [profile, setProfile] = useState([
     {
-      userName: "a",
-      userEmail: "a",
-      password: "a",
-      image: "image", // Include the image in the user object
+      userName: "admin",
+      userEmail: "admin",
+      password: "admin",
     }
   ])
   return (

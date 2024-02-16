@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import wheyprotein from '../../imgs/wheyprotein-removebg-preview.png'
-import "./cart.scss";
-import BCAA from '../../imgs/products/BCAA.png'
-import Creatine from '../../imgs/products/Creatine.png'
-import MassTech from '../../imgs/products/MassTech.png'
-import Omega3 from '../../imgs/products/Omega3.png'
-import PreWorkOut from '../../imgs/products/PreWorkOut.png'
-import collpic from '../../imgs/others/mencollection.png'
+import { Avatar, Dropdown, Navbar } from 'flowbite-react';
+import userlogo from '../../imgs/usericon.png'
+import { FaShoppingCart } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
+import './cart.scss'
+
 
 const Cart = () => {
     const [quantity, setQuantity] = useState(1);
@@ -18,161 +17,78 @@ const Cart = () => {
             setQuantity(quantity - 1);
         }
     };
+const navigate = useNavigate()
 
     return (
-        // <div className="productParent bg-red-500 h-screen">
-        //     <h2 className="text-center mt-2">Cart</h2>
-        //     <br />
-        //     <div className=" ms-4 table-header">
-        //         <p>Product</p>
-        //         <p>Price</p>
-        //         <p>Quantity</p>
-        //         <p>Total</p>
-        //         <p>Add</p>
-        //     </div>
-        //     <div className=" ms-4 favorie-section">
-        //         <div className="productParent">
-        //             <div className="favorie">
-        //                 <img className="tshirt" src={wheyprotein} alt="" />
-        //                 <p>Men T-shirt</p>
-        //                 <p>$36</p>
-        //                 <div className="quantity-control">
-        //                     <button onClick={handleDecrease}>-</button>
-        //                     <h3>{quantity}</h3>
-        //                     <button onClick={handleIncrease}>+</button>
-        //                 </div>
-        //                 <p>${36 * quantity}</p>
-        //                 <button>Add</button>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
 
-        <body class="bg-gray-100">
-  <div class="container mx-auto mt-10">
-    <div class="flex shadow-md my-10">
-      <div class="w-3/4 bg-white px-10 py-10">
-        <div class="flex justify-between border-b pb-8">
-          <h1 class="font-semibold text-2xl">Shopping Cart</h1>
-          <h2 class="font-semibold text-2xl">3 Items</h2>
+<>
+<div>
+            <Navbar fluid rounded className='h-[10vh] shadow-md'>
+                <Navbar.Brand href="https://flowbite-react.com">
+                    <span className="self-center whitespace-nowrap text-3xl font-semibold dark:text-white px-6 ">Pro<span className=' text-secondary-color'>Cr.</span></span>
+                </Navbar.Brand>
+                <div className="flex md:order-2">
+                    <Dropdown
+                        arrowIcon={false}
+                        inline
+                        label={
+                            <Avatar alt="User settings" img={userlogo} className='px-2' rounded />
+                        }
+                    >
+                        <Dropdown.Header>
+                            <span className="block text-sm">UserName</span>
+                            <span className="block truncate text-sm font-medium">username@gmail.com</span>
+                        </Dropdown.Header>
+                        <Dropdown.Item onClick={() => navigate('/')}>Log Out</Dropdown.Item>
+                        {/* <Dropdown.Item>Settings</Dropdown.Item>
+                        <Dropdown.Item>Earnings</Dropdown.Item>
+                        <Dropdown.Divider />
+                        <Dropdown.Item>Sign out</Dropdown.Item> */}
+                    </Dropdown>
+                    <Navbar.Toggle />
+                </div>
+                <Navbar.Collapse className='mt-2'>
+                    <Navbar.Link href="#"  className="text-lg block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary-color md:dark:hover:text-secondary-color dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={() => navigate('/home')}>
+                        Home
+                    </Navbar.Link>
+                    <Navbar.Link href="#" className="text-lg block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary-color md:dark:hover:text-secondary-color dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={() => navigate('/about')}>About</Navbar.Link>
+                    <Navbar.Link href="#" className="text-lg block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary-color md:dark:hover:text-secondary-color dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={() => navigate('/shop')}>Shop</Navbar.Link>
+                    <Navbar.Link href="#" className="text-lg block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-secondary-color md:dark:hover:text-secondary-color dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" onClick={() => navigate('/contact')}>Contact</Navbar.Link>
+                </Navbar.Collapse>
+            </Navbar>
         </div>
-        <div class="flex mt-10 mb-5">
-          <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Product Details</h3>
-          <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Quantity</h3>
-          <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Price</h3>
-          <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Total</h3>
-        </div>
-        <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-          <div class="flex w-2/5">
-            <div class="w-20">
-              <img class="h-24" src="https://drive.google.com/uc?id=18KkAVkGFvaGNqPy2DIvTqmUH_nk39o3z" alt=""/>
-            </div>
-            <div class="flex flex-col justify-between ml-4 flex-grow">
-              <span class="font-bold text-sm">Iphone 6S</span>
-              <span class="text-red-500 text-xs">Apple</span>
-              <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
-            </div>
-          </div>
-          <div class="flex justify-center w-1/5">
-            <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-            </svg>
-
-            <input class="mx-2 border text-center w-8" type="text" value="1"/>
-
-            <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-              <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-            </svg>
-          </div>
-          <span class="text-center w-1/5 font-semibold text-sm">$400.00</span>
-          <span class="text-center w-1/5 font-semibold text-sm">$400.00</span>
-        </div>
-
-        <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-          <div class="flex w-2/5"> 
-            <div class="w-20">
-              <img class="h-24" src="https://drive.google.com/uc?id=10ht6a9IR3K2i1j0rHofp9-Oubl1Chraw" alt=""/>
-            </div>
-            <div class="flex flex-col justify-between ml-4 flex-grow">
-              <span class="font-bold text-sm">Xiaomi Mi 20000mAh</span>
-              <span class="text-red-500 text-xs">Xiaomi</span>
-              <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
-            </div>
-          </div>
-          <div class="flex justify-center w-1/5">
-            <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-            </svg>
-
-            <input class="mx-2 border text-center w-8" type="text" value="1"/>
-
-            <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-              <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-            </svg>
-          </div>
-          <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
-          <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
-        </div>
-
-        <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-          <div class="flex w-2/5">
-            <div class="w-20">
-              <img class="h-24" src="https://drive.google.com/uc?id=1vXhvO9HoljNolvAXLwtw_qX3WNZ0m75v" alt=""/>
-            </div>
-            <div class="flex flex-col justify-between ml-4 flex-grow">
-              <span class="font-bold text-sm">Airpods</span>
-              <span class="text-red-500 text-xs">Apple</span>
-              <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
-            </div>
-          </div>
-          <div class="flex justify-center w-1/5">
-            <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-            </svg>
-            <input class="mx-2 border text-center w-8" type="text" value="1"/>
-
-            <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-              <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-            </svg>
-          </div>
-          <span class="text-center w-1/5 font-semibold text-sm">$150.00</span>
-          <span class="text-center w-1/5 font-semibold text-sm">$150.00</span>
-        </div>
-
-        <a href="#" class="flex font-semibold text-indigo-600 text-sm mt-10">
       
-          <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
-          Continue Shopping
-        </a>
-      </div>
-
-      <div id="summary" class="w-1/4 px-8 py-10">
-        <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
-        <div class="flex justify-between mt-10 mb-5">
-          <span class="font-semibold text-sm uppercase">Items 3</span>
-          <span class="font-semibold text-sm">590$</span>
+        <div className="productParent h-[80vh] flex flex-col justify-center ml-64">
+            <h2 className="text-center font-thin mr-64 text-6xl">Cart</h2>
+            <br />
+            <div className=" ms-4 table-header">
+                <p>Product</p>
+                <p>Price</p>
+                <p>Quantity</p>
+                <p>Total</p>
+                <p>Add</p>
+            </div>
+            <div className=" ms-4 favorie-section">
+                <div className="productParent">
+                    <div className="favorie">
+                        <img className="tshirt" src={wheyprotein} alt="" />
+                        <p>ProductExample</p>
+                        <p>$36</p>
+                        <div className="quantity-control">
+                            <button onClick={handleDecrease} className="text-secondary-color">-</button>
+                            <h3>{quantity}</h3>
+                            <button onClick={handleIncrease} className="text-green-500">+</button>
+                        </div>
+                        <p className="text-green-500">${36 * quantity}</p>
+                        <button className="bg-secondary-color text-white p-3 px-6 rounded-full">Add</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-          <label class="font-medium inline-block mb-3 text-sm uppercase">Shipping</label>
-          <select class="block p-2 text-gray-600 w-full text-sm">
-            <option>Standard shipping - $10.00</option>
-          </select>
-        </div>
-        <div class="py-10">
-          <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Promo Code</label>
-          <input type="text" id="promo" placeholder="Enter your code" class="p-2 text-sm w-full"/>
-        </div>
-        <button class="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Apply</button>
-        <div class="border-t mt-8">
-          <div class="flex font-semibold justify-between py-6 text-sm uppercase">
-            <span>Total cost</span>
-            <span>$600</span>
-          </div>
-          <button class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</body>
-
+        
+        
+        
+        </>
     );
 };
 
